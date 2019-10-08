@@ -3,9 +3,9 @@ import { HttpClient } from '@angular/common/http';
 
 
 export interface Article {
-  body  : string;
-  id    : number;
-  title : string;
+  body: string;
+  id: number;
+  title: string;
   userId: number;
 }
 
@@ -20,28 +20,23 @@ export class ArticlesOnlineService {
 
   constructor(private http: HttpClient) { }
 
-  getAll()
-  {
+  getAll() {
     return this.http.get(this._url);
   }
 
-  getOne(id)
-  {
+  getOne(id) {
     return this.http.get(`${this._url}/${id}`);
   }
 
-  getPosts(ressource)
-  {
+  getPosts(ressource) {
     return this.http.get(this._url, ressource);
   }
 
-  update(ressource)
-  {
+  update(ressource) {
     return this.http.put(`${this._url}/${ressource.id}`, ressource);
   }
 
-  delete(id)
-  {
+  delete(id) {
     return this.http.delete(`${this._url}/${id}`);
   }
 }

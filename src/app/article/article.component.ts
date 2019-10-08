@@ -14,9 +14,9 @@ export class ArticleComponent implements OnInit {
   articles;
 
   constructor(
-               private service : ArticlesOnlineService,
+               private service: ArticlesOnlineService,
 
-               private router : Router) { }
+               private router: Router) { }
 
   ngOnInit() {
 
@@ -29,8 +29,7 @@ export class ArticleComponent implements OnInit {
 
   }
 
-  onClickHome()
-  {
+  onClickHome() {
     this.router.navigate(['/']);
   }
 
