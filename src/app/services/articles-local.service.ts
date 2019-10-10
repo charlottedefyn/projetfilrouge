@@ -16,7 +16,7 @@ export class ArticlesLocalService {
       {id : 5, titre: 'un titre', contenu : 'lorem' , img : 'https://via.placeholder.com/400x200'},
       {id : 6, titre: 'un titre', contenu : 'lorem' , img : 'https://via.placeholder.com/400x200'},
     ];
-  }
+  }// A REFAIRE POUR ARTICLE 
 
   get(id) {
     const article = this.getAll().find((article) => {

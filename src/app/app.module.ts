@@ -15,15 +15,19 @@ import { ContactComponent } from './contact/contact.component';
 import { FaqComponent } from './faq/faq.component';
 import { CarouselHomeComponent } from './homepage/carousel-home/carousel-home.component';
 import { ArticleComponent } from './article/article.component';
+import { GalerieComponent } from './galerie/galerie.component';
 
 
-
+import { NewArticleComponent } from './new-article/new-article.component';
 import { FormContactService } from './services/form-contact.service';
 import { FormContactComponent } from './contact/form-contact/form-contact.component';
 import { ArticlesLocalService } from './services/articles-local.service';
 import { ArticlesOnlineService } from './services/articles-online.service';
 
 import { NotFoundComponent } from './not-found/not-found.component';
+
+
+
 
 
 
@@ -43,11 +47,15 @@ import { NotFoundComponent } from './not-found/not-found.component';
     CarouselHomeComponent,
 
     ArticleComponent,
+    GalerieComponent,
     FaqComponent,
     ContactComponent,
-
+    NewArticleComponent,
     FormContactComponent,
     NotFoundComponent,
+    
+    
+    
 
   ],
   imports: [
@@ -60,6 +68,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
       {path: 'contact', component: ContactComponent},
       {path: 'faq', component : FaqComponent},
       {path: '**', component: NotFoundComponent},
+      {path: 'galerie', component : GalerieComponent},
 
 
 

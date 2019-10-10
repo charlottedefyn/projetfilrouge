@@ -3,10 +3,16 @@ import { HttpClient } from '@angular/common/http';
 
 
 export interface Article {
-  body: string;
-  id: number;
-  title: string;
-  userId: number;
+
+
+    title           : String ,
+    category        : String[],
+    contains        : String,
+    author          : String,
+    date            : Date,
+    email           : String,
+    online          : Boolean,
+
 }
 
 
@@ -15,6 +21,8 @@ export interface Article {
   providedIn: 'root'
 })
 export class ArticlesOnlineService {
+
+  // serveur heroku qui sauvegare les données, on les récupère par ici 
 
   private _url = 'https://shielded-eyrie-73126.herokuapp.com/api/articles';
 
