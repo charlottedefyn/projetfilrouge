@@ -17,7 +17,7 @@ import { CarouselHomeComponent } from './homepage/carousel-home/carousel-home.co
 import { ArticleComponent } from './article/article.component';
 import { GalerieComponent } from './galerie/galerie.component';
 
-
+import { UpdateArticleComponent } from './update-article/update-article.component';
 import { NewArticleComponent } from './new-article/new-article.component';
 import { FormContactService } from './services/form-contact.service';
 import { FormContactComponent } from './contact/form-contact/form-contact.component';
@@ -25,6 +25,7 @@ import { ArticlesLocalService } from './services/articles-local.service';
 import { ArticlesOnlineService } from './services/articles-online.service';
 
 import { NotFoundComponent } from './not-found/not-found.component';
+import { OneArticleComponent } from './one-article/one-article.component';
 
 
 
@@ -50,12 +51,15 @@ import { NotFoundComponent } from './not-found/not-found.component';
     GalerieComponent,
     FaqComponent,
     ContactComponent,
+    UpdateArticleComponent,
     NewArticleComponent,
     FormContactComponent,
     NotFoundComponent,
-    
-    
-    
+    OneArticleComponent,
+
+
+
+
 
   ],
   imports: [
@@ -64,11 +68,14 @@ import { NotFoundComponent } from './not-found/not-found.component';
       {path: '', component : HomepageComponent},
       {path: 'home', component: HomepageComponent},
       {path: 'article', component : ArticleComponent},
+      {path: 'article/new', component : NewArticleComponent},
       {path: 'article/:title/:id', component : ArticleComponent},
+      {path: 'article/:update', component : UpdateArticleComponent},
       {path: 'contact', component: ContactComponent},
+      {path: 'galerie', component : GalerieComponent},
       {path: 'faq', component : FaqComponent},
       {path: '**', component: NotFoundComponent},
-      {path: 'galerie', component : GalerieComponent},
+
 
 
 

@@ -1,9 +1,20 @@
-
-
-<div *ngFor="let article of articles">
-  <h2>{{ article.title }}</h2>
-  
-  <p><a [routerLink]="['/:id']" >Lire la suite ...</a></p>
-  <hr>
+<div>
+  <a routerLink="/article/new" class="btn btn-primary">nouvel article</a>
 </div>
-
+<div>
+  <article *ngFor="let article of articles">
+      <h2>
+          <a [routerLink]="['/article', article.id]">{{ article.title }}</a>
+      </h2>
+      <p>{{ article.body }}</p>
+      <hr>
+      <button
+          class="btn btn-danger" (click)="onClickDelete(article)">
+          supprimer
+      </button>
+      &nbsp;
+      <button class="btn btn-warning" (click)="onClickUpdate(article)">
+          <a routerLink="/article/update"> Mise à jour </a>
+      </button>
+  </article>
+</div>

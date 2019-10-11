@@ -1,78 +1,79 @@
 <form #f="ngForm" (submit)="onSubmitNewArticle( $event, f )">
 
-    <div class="form-group">
-        <label for="title">Titre</label>
-        <input
+  <div class="form-group">
+      <label for="title">Titre</label>
+      <input
 
-            type="text"
-            name="title"
-            id="title"
-            class="form-control"
-            ngModel
-            #title="ngModel"
-            required
-            minlength="3"
-            maxlength="50"
-            >
-            <div class="alert alert-danger" *ngIf="titre.touched && !titre.valid">
-                <div *ngIf="titre.errors.required">Veuillez entrer un titre</div>
-                <div *ngIf="titre.errors.minlength">10 caractères minimum</div>
-            </div>
-    </div>
+          type="text"
+          name="title"
+          id="title"
+          class="form-control"
+          ngModel
+          #title="ngModel"
+          required
+          minlength="3"
+          maxlength="50"
+          >
+          <div class="alert alert-danger" *ngIf="title.touched && !title.valid">
+              <div *ngIf="title.errors.required">Veuillez entrer un titre</div>
+              <div *ngIf="title.errors.minlength">10 caractères minimum</div>
 
-    <div class="form-group">
-        <label for="author">Nom de l'auteur</label>
-        <input 
-            type="text"
-            name="author"
-            class="form-control"
-            ngModel
-            #author="ngModel"
-            required
-            minlength="3"
-            maxlength="50"
-        >
-        <div class="alert alert-danger" *ngIf="author.touched && !author.valid">
-            <div *ngIF="author.errors.required">Vous devez indiquer un auteur</div>
-            <div *ngIf="author.errors.minlength">3 caractères minimum requis</div>
-            
-        </div>
-    </div>
+          </div>
+  </div>
 
+  <div class="form-group">
+      <label for="author">Nom de l'auteur</label>
+      <input
+          type="text"
+          name="author"
+          class="form-control"
+          ngModel
+          #author="ngModel"
+          required
+          minlength="3"
 
-    <div class="form-group">
-        <label for="contains">Commencer l'article ...</label>
+      >
+      <div class="alert alert-danger" *ngIf="author.touched && !author.valid">
+          <div *ngIf="author.errors.required">Vous devez indiquer un auteur</div>
+          <div *ngIf="author.errors.minlength">3 caractères minimum requis</div>
 
-        <textarea
-
-            name="contains"
-            id="contains"
-            rows="10"
-            class="form-control"
-            ngModel
-            #contains="ngModel"
-            required
-            minlength="20"
-            maxlenght="1000">
-            
-        </textarea>
-
-        <div class="alert alert-danger" *ngIf="contains.touched && !contains.valid">
-            <div *ngIf="contenu.errors.required">Vous devez écrire un article </div>
-            <div *ngIf="contenu.errors.minlength">20 caractère requis minimum</div>
-        </div>
-    </div>
+      </div>
+  </div>
 
 
-    <div class="form-group">
-        <input
-            type="submit"
-            value="Créer"
-            class="btn btn-light"
-            [disabled]="!f.valid"
-        >
-    </div>
+  <div class="form-group">
+      <label for="contains">Commencer l'article ...</label>
+
+      <textarea
+
+          name="contains"
+          id="contains"
+          rows="10"
+          class="form-control"
+          ngModel
+          #contains="ngModel"
+          required
+          minlength="20"
+          maxlenght="1000">
+
+      </textarea>
+
+      <div class="alert alert-danger" *ngIf="contains.touched && !contains.valid">
+          <div *ngIf="contains.errors.required">Vous devez écrire un article </div>
+          <div *ngIf="contains.errors.minlength">20 caractère requis minimum</div>
+      </div>
+  </div>
+
+
+  <div class="form-group">
+      <input
+          type="submit"
+          value="Créer"
+          class="btn btn-light"
+          [disabled]="!f.valid"
+      >
+  </div>
 </form>
 <div class="alert alert-success" *ngIf="isOk">
-    Vous avez créer un nouvel article !
+  Nouvel article mis en ligne !
 </div>

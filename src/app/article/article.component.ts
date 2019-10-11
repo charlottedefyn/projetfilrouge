@@ -21,17 +21,31 @@ export class ArticleComponent implements OnInit {
   ngOnInit() {
 
     this.service.getAll().subscribe(
-      (resultat) => {
-        this.articles = resultat;
+      (result) => {
+        console.log(result)
+        this.articles = result;
 
       }
     );
 
   }
 
+  onClickDelete(article)
+  {
+    this.service.delete(article._id).subscribe(
+      (result) => {
+        const index = this.articles.indexOf(article);
+        this.articles.splice(index, 1);
+      }
+    );
+  }
+
+  onClickUpdate(article) {
+    console.log(article)
+    this.router.navigate(['/article/update', article._id])
+  }
+
   onClickHome() {
     this.router.navigate(['/']);
   }
-
-
 }
